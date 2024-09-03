@@ -18,7 +18,10 @@ public class SecurityConfig {
             auth.requestMatchers("api/v1/open/greeting").permitAll();
             auth.requestMatchers("api/v1/protected/greeting").authenticated();
         })
-                .formLogin(withDefaults());
+         //       .formLogin(withDefaults());
+                .oauth2Login();
+
+
         return http.build();
     }
 }
